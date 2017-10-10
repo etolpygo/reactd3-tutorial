@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import * as d3 from 'd3';
 import _ from 'lodash';
 
+import './App.css';
+
 import Preloader from './components/Preloader';
 import { loadAllData } from './DataHandling';
 import CountyMap from './components/CountyMap';
+import Histogram from './components/Histogram';
 
 
 class App extends Component {
@@ -58,7 +61,16 @@ class App extends Component {
                               y={0}
                               width={500}
                               height={500} />
-                  </svg>
+                  <Histogram  bins={10}
+                        width={500}
+                        height={500}
+                        x="500"
+                        y="10"
+                        data={filteredSalaries}
+                        axisMargin={83}
+                        bottomMargin={5}
+                        value={d => d.base_salary} />
+                </svg>
               </div>
             );
 
