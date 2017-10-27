@@ -9,6 +9,7 @@ import { loadAllData } from './DataHandling';
 import CountyMap from './components/CountyMap';
 import Histogram from './components/Histogram';
 import { Title, Description, GraphDescription } from './components/Meta';
+import MedianLine from './components/MedianLine';
 
 
 class App extends Component {
@@ -83,6 +84,14 @@ class App extends Component {
                         data={filteredSalaries}
                         axisMargin={83}
                         bottomMargin={5}
+                        value={d => d.base_salary} />
+                  <MedianLine data={filteredSalaries}
+                        x={500}
+                        y={10}
+                        width={300}
+                        height={500}
+                        bottomMargin={5}
+                        median={medianHousehold}
                         value={d => d.base_salary} />
                 </svg>
               </div>

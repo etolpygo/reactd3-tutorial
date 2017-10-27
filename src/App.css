@@ -16,3 +16,13 @@ button {
 .row {
   margin-top: 1em;
 }
+
+.mean text {
+  font: 11px sans-serif; fill: grey;
+}
+
+.mean path { 
+  stroke-dasharray: 3; 
+  stroke: grey; 
+  stroke-width: 1px;
+}
