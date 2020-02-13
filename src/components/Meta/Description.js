@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { scaleLinear } from 'd3-scale';
 import { mean as d3mean, extent as d3extent, deviation as d3deviation } from 'd3-array';
 import _ from 'lodash';
-import S from 'string';
 
 import USStatesMap from './USStatesMap';
 
@@ -106,7 +105,7 @@ class Description extends Component {
 
         best = ordered[ordered.length-1];
 
-        const city = S(best[0].city).titleCase().s + `, ${best[0].USstate}`,
+        const city = best[0].city.toUpperCase() + `, ${best[0].USstate}`,
               mean = d3mean(best, d => d.base_salary);
 
         const jobFragment = this.jobTitleFragment
